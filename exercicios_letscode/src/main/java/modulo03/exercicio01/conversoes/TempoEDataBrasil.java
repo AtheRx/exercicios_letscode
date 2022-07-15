@@ -4,8 +4,8 @@ public class TempoEDataBrasil extends Conversor {
 
     public TempoEDataBrasil(Conversor proximo) {
         super(proximo);
-        super.padraoString = "\\d{2}:\\d{2}:\\d{2} \\d{2}-\\d{2}-\\d{4}";
-        super.formatoDateTime = "HH:mm:ss YYYY-MM-DD";
+        this.padraoString = "\\d{2}:\\d{2}:\\d{2} \\d{2}-\\d{2}-\\d{4}";
+        this.formatoDateTime = "HH:mm:ss dd-MM-yyyy";
     }
 
 }

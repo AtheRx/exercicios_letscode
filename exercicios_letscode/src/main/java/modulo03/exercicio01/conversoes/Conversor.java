@@ -11,7 +11,7 @@ public abstract class Conversor {
 
     protected Conversor proximo;
 
-    public Conversor(Conversor proximo){
+    Conversor(Conversor proximo){
         this.proximo = proximo;
     }
 
