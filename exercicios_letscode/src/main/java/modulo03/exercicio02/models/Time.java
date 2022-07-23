@@ -7,16 +7,16 @@ public class Time {
         private String nome;
         private List<Jogador> jogadores;
 
-    public Time(String nome, List<Jogador> jogadores){
+    public Time(String nome, List<Jogador> jogadores) {
         this.nome = nome;
         this.jogadores = jogadores;
     }
 
-    public String getNome(){
+    public String getNome() {
         return this.nome;
     }
 
-    public List<Jogador> getJogadores(){
+    public List<Jogador> getJogadores() {
         return Collections.unmodifiableList(this.jogadores);
     }
 

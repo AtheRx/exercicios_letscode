@@ -18,7 +18,7 @@ public class Main {
     }
 
 
-    public static void carregarTimes(){
+    public static void carregarTimes() {
         times = new ArrayList<>() {{
             add(new Time (
                     "Gremio",
@@ -55,7 +55,7 @@ public class Main {
         }};
     }
 
-    public static void selecionarJogadorPorPosicao(Tipo tipoJogador){
+    public static void selecionarJogadorPorPosicao(Tipo tipoJogador) {
         times.stream().forEach(
                 time -> time.getJogadores()
                         .stream()
