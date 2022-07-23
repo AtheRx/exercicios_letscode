@@ -2,7 +2,6 @@ package modulo03.exercicio01;
 
 import modulo03.exercicio01.conversoes.ConversorDeData;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
@@ -12,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class main {
+public class Main {
 
     public static List<Map<String, String>> original = new ArrayList<>();
     public static List<Map<String, String>> listaCorrigida = new ArrayList<>();
@@ -25,13 +24,13 @@ public class main {
         verificaMaisVelhoEMaisNovo();
     }
 
-    public static void carregarListaOriginal(){
+    public static void carregarListaOriginal() {
         original.add(Map.of("nome", "João", "nascimento", "1985-12-11 12:10:33"));
         original.add(Map.of("nome", "Maria", "nascimento", "24-07-1988 23:02:41"));
         original.add(Map.of("nome", "Ana", "nascimento", "03:58:26 14-02-1983"));
         original.add(Map.of("nome", "Pedro", "nascimento", "08:03:07 1989-11-02"));
     }
-    public static void corrigirListaOriginal(){
+    public static void corrigirListaOriginal() {
         ConversorDeData conversor = new ConversorDeData();
 
         original.forEach((registro) -> {
@@ -40,7 +39,7 @@ public class main {
         });
     }
 
-    public static void verificaMaisVelhoEMaisNovo(){
+    public static void verificaMaisVelhoEMaisNovo() {
         long maxAge = Long.MIN_VALUE;
         long minAge = Long.MAX_VALUE;
         Map<String, String> olderRegister = new HashMap<>();
@@ -50,12 +49,12 @@ public class main {
             LocalDate birthDate = LocalDateTime.parse(register.get("nascimento")).toLocalDate();
             long daysSinceBirth = ChronoUnit.DAYS.between(birthDate, LocalDate.now());
 
-            if (daysSinceBirth > maxAge){
+            if (daysSinceBirth > maxAge) {
                 maxAge = daysSinceBirth;
                 olderRegister = register;
             }
 
-            if (daysSinceBirth < minAge){
+            if (daysSinceBirth < minAge) {
                 minAge = daysSinceBirth;
                 newsterRegister = register;
             }
@@ -73,7 +72,7 @@ public class main {
 
     }
 
-    public static long pegarIdadeAtual(String birthDate){
+    public static long pegarIdadeAtual(String birthDate) {
         LocalDateTime date = LocalDateTime.parse(birthDate);
         return Period.between(date.toLocalDate(), LocalDate.now()).getYears();
     }
